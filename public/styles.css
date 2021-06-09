@@ -1,0 +1,539 @@
+:root {
+    --default-space: 10px;
+}
+
+html {overflow: hidden}
+
+body {
+    background: black;
+    color: #f5eded;
+    font-size: 18px;
+    padding: none;
+    margin: unset;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+.perspective-wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    perspective: 1px;
+}
+
+section.section.main-section::before {
+    background-image: url('assets/background-body.png');
+    position: absolute;
+    background-position: right;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    transform-origin: center center 0;
+    height: 100vh;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    content: '';
+    /* filter: blur(3px); */
+}
+
+.hide {
+    opacity: 0 !important;
+    bottom: 2em !important;
+    display: none;
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    background-image: url(./assets/me.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+#nav {
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav>div {
+    font-size: 70px;
+    transition: transform 200ms;
+    position: relative;
+    text-align: center;
+}
+
+#nav>div#hello::after {
+    content: "Hello!";
+}
+
+#nav>div#hello:hover::after {
+    content: "Home";
+}
+
+#nav>div#im::after {
+    content: "I'm";
+}
+
+#nav>div#im:hover::after {
+    content: "Info";
+}
+
+#nav>div#trung::after {
+    content: "Trung";
+}
+
+#nav>div#trung:hover::after {
+    content: "Contact";
+}
+
+#nav>div:hover {
+    transform: translate3d(10px, 0, 0);
+    color: #d72323;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-shadow: 0px 0px 20px #d72323;
+}
+
+#nav>div:hover::after {
+    content: "HOME";
+    display: block;
+    transform: translate3d(10px, 0, 0);
+    color: #d72323;
+    cursor: pointer;
+}
+
+#nav.nav-enabled>div:hover {
+    color: white;
+}
+
+#nav.nav-enabled>div:hover::after {
+    color: white;
+}
+
+
+/* .work-section {
+    background-image: linear-gradient(black, #d72323);
+} */
+
+.info-section {
+    background: #d72323;
+    /* padding-top: 50px; */
+}
+
+.info-section div#commonInfomation {
+    font-family: Consolas, monospace;
+    letter-spacing: 3px;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.contact-section {
+    /* background: #d72323; */
+}
+
+.contact-container {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-container a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+img#avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#scrollTop {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    border: 2px solid #f5eded;
+    color: #f5eded;
+    position: fixed;
+    bottom: 1em;
+    right: 2em;
+    cursor: pointer;
+    transition: all 200ms;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+#scrollTop>span {
+    position: relative;
+    top: -1;
+}
+
+#scrollTop:hover {
+    box-shadow: 0px 0px 10px 1px #f5eded;
+    text-shadow: 0px 0px 5px #f5eded;
+}
+
+#nav.nav-enabled {
+    position: sticky;
+    flex-direction: row;
+    top: 50px;
+    height: 50px;
+    margin-top: -50px;
+    display: flex;
+    animation-name: navApear;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    border: 1px solid #c3c3c361;
+    background: #ffffff0f;
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+}
+
+@keyframes navApear {
+    from {
+        top: -100;
+    }
+    to {
+        top: 0;
+    }
+}
+
+.nav-enabled>div {
+    margin: 0 0.5em 0 0.5em;
+    font-size: 2.5em !important;
+}
+
+.nav-enabled #hello::after {
+    content: 'home' !important;
+}
+
+.nav-enabled #im::after {
+    content: 'info'!important;
+}
+
+.nav-enabled #trung::after {
+    content: 'contact'!important;
+}
+
+.nav-enabled>div:hover::after {
+    color: #f5eded !important;
+    border-bottom: 1px solid #f5eded;
+}
+
+.nav-enabled>div:hover {
+    color: #f5eded !important;
+}
+
+.flex-center--middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+#mainInfomation {
+    /* visibility: visible; */
+    opacity: 1;
+    transition: width 0ms, height 0ms, opacity 500ms;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#gameContainer .game-instruction {
+    position: absolute;
+    background: #a00303;
+    letter-spacing: 3px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    box-sizing: content-box;
+    box-shadow: 0 0 20px 2px #060000;
+}
+
+
+#workSection {
+    position: relative;
+}
+
+#workSection .action-btn {
+    font-size: 50px;
+    color: white;
+    opacity: 0.5;
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    transition: opacity 500ms;
+    z-index: 10;
+    width: 4rem;
+    text-align: center;
+}
+
+#workSection .action-btn:hover {
+    opacity: 1;
+}
+
+#workSection .next-btn.action-btn {
+    right: calc(4rem/3);
+}
+
+#workSection .prev-btn.action-btn {
+    left: calc(4rem/3);
+}
+
+#workSection .information-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#workSection .information-item>pre {
+    font-size: 1.5rem;
+}
+
+pre.simulate-tag {
+    font-size: 1.5rem;
+}
+
+#workSection .work-properties {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+#workSection .preview-img {
+    text-align: center;
+    margin: auto;
+}
+
+#workSection .information-content {
+    margin-top: 45px;
+    margin-bottom: 45px;
+    font-family: Consolas, monospace;
+}
+
+#workSection .information-item>.flex-row>.information-content {
+    margin-top: 0;
+}
+
+.information-item:hover::after {
+    opacity: 1;
+}
+
+.information-item:hover::before {
+    opacity: 1;
+}
+
+#workSection .work-properties {}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.d-flex {
+    display: flex;
+}
+
+
+/* 
+#mainInfomation:hover {
+    opacity: 0;
+} */
+
+.hidden {
+    /* visibility: hidden !important;F */
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    z-index: -2;
+    display: none;
+    border: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-top: none !important;
+    /* transition: width 0ms, height 0ms, opacity 500ms; */
+}
+
+.btn {
+    border: #f5eded solid 1px;
+    background: black;
+    height: 3rem;
+    color: #f5eded;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 8px 30px;
+    text-decoration: none;
+    position: relative;
+    font-family: Consolas, monospace;
+}
+
+.btn:hover {
+    /* border: 2px solid cyan; */
+    border-color: #d72323;
+    box-shadow: 0 0 50px 0px #d72323;
+}
+
+button.control-btn {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    font-size: 30px;
+    outline: none;
+    bottom: -153px;
+    border: black 1px solid;
+    display: none;
+}
+
+button.control-btn.left-control {
+    left: 0;
+}
+
+button.control-btn.right-control {
+    left: 200px;
+}
+
+button.control-btn.right-control::after {
+    content: '';
+    border-right: 10px solid black;
+    border-bottom: 10px solid black;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    transform: rotate( 
+-45deg
+ );
+}
+
+button.control-btn.left-control::after {
+    content: '';
+    border-right: 10px solid black;
+    border-bottom: 10px solid black;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    transform: rotate( 
+-225deg
+ );
+}
+
+button.control-btn.jump-control {
+    right: 0;
+    width: 203px;
+    border-radius: 50px;
+    font-family: Consolas, monospace;
+}
+
+#controlBtnContainer {}
+
+button.control-btn:active {
+    background: cadetblue;
+}
+
+#canvas {
+    height: calc((100vh * 8 / 12));
+    width: calc((100vw * 11 / 12));
+}
+
+
+/* .info-line-container {
+    mb
+} */
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.info-icon {
+    background: #d72323;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex !important;
+    border-radius: 50%;
+}
+
+#infoText {
+    overflow: hidden;
+    padding-right: 5px;
+    border-right: 1px solid white;
+}
+
+.mx-default {
+    margin-right: var(--default-space);
+    margin-left: var(--default-space);
+}
+
+.mr-default {
+    margin-right: var(--default-space);
+}
+
+.ml-default {
+    margin-left: var(--default-space);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* responsive */
+@media only screen and (max-width: 1600px) {
+    body p {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    button.control-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #scrollTop {
+        font-size: 30px;
+        padding: 10px 15px 20px 15px;
+    }
+
+    .btn {
+        padding: 20px 30px;
+        font-family: Consolas, monospace;
+        font-size: 30px;
+        height: unset;
+    }
+}

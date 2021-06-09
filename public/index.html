@@ -1,0 +1,211 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="./scripts/libs/anime.min.js"></script>
+
+    <!-- Primary Meta Tags -->
+    <title>Nguyen Thanh Trung Front-end Developer</title>
+    <meta name="title" content="Nguyen Thanh Trung Front-end Developer">
+    <meta name="description" content="
+I’m working as front-end developer in FPT Software in Hanoi and I have over three years hand-on
+experience efficiently coding websites and applications using modern HTML, CSS, and JavaScript.">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+</head>
+
+<body>
+    <div class="perspective-wrapper">
+        <div id="nav" class="">
+            <div id="hello" onclick="onClickWork()"></div>
+            <div id="im" onclick="onClickInfo()"></div>
+            <div id="trung" class="trung" onclick="onClickContact()" style="margin-top: 0px;"></div>
+        </div>
+        <section class="section main-section">
+        </section>
+
+        <section class="section info-section flex-center--middle">
+            <div id="commonInfomation" style="letter-spacing: 3px;">
+                <h1>
+                    Hey, I'm Nguyen Thanh Trung
+                </h1>
+                <p>
+                    I’m working as front-end developer in FPT Software in Hanoi<br> and I have over three years hand-on
+                    experience efficiently coding websites and applications <br> using modern HTML, CSS, and JavaScript.
+                </p>
+
+                <button id="start" onclick="initGame()" class="btn">Explore</button>
+            </div>
+            <div class="flex-center--middle hidden" id="gameContainer">
+                <canvas id="canvas" width="735.1666666666666px" height="500px"></canvas>
+                <!-- <button id="adv" onclick="initGame()" class="">Experience overview</button> -->
+                <button class="control-btn left-control" onmousedown="player.goLeft();" ontouchstart="player.goLeft();"
+                    onmouseup="player.pressingLeft = false;" ontouchend="player.pressingLeft = false;">❮</button>
+                <button class="control-btn right-control" onmousedown="player.goRight();"
+                    onmouseup="player.pressingRight = false;" ontouchstart="player.goRight();"
+                    ontouchend="player.pressingRight = false;">❯</button>
+                <button class="control-btn jump-control" onmousedown="player.jump()"
+                    onmouseup="player.pressingJump = false;" ontouchstart="player.jump()"
+                    ontouchend="player.pressingJump = false;">Jump</button>
+
+                <button class="control-btn left-control" ontouchstart="player.goLeft();"
+                    ontouchend="player.pressingLeft = false;"></button>
+                <button class="control-btn right-control" ontouchstart="player.goRight();"
+                    ontouchend="player.pressingRight = false;"></button>
+                <button class="control-btn jump-control" ontouchstart="player.jump()"
+                    ontouchend="player.pressingJump = false;">Jump</button>
+                <div class="game-instruction">
+                    <p>
+                        Welcome!<br>
+                        You can use arrow key to move character<br>
+                        And press space bar key to jump
+                    </p>
+                </div>
+            </div>
+            <div id="mainInfomation" class="mx-default hidden flex-center--middle">
+                <pre id="infoText">Check out my little works</pre>
+            </div>
+            <div id="workSection" class="mx-default hidden">
+                <span class="prev-btn action-btn" onclick="moveInfoItem(false)">
+                    ❮
+                </span>
+                <span class="next-btn action-btn" onclick="moveInfoItem(true)">
+                    ❯
+                </span>
+                <div class="information-item info-vertical">
+                    <pre class="simulate-tag">&lt;Bootstrap-4-grid-generator&gt;</pre>
+                    <div class="work-properties">
+                        <div class="preview-img">
+                            <img class="mr-default" style="width: 100%;
+                            max-width: 700px;" src="./assets/bootstrap4grid.gif">
+                        </div>
+                        <div class="information-content">
+                            <p>
+                                The simple tool use to generate grid HTML with bootstrap 4 class.
+                                <br> Created for purpose increase developer performance when create UI from scratch.
+                                <br>
+                                <br>
+
+                                <a href="https://bootstrap-4-grid-generate.web.app/" target="_blank">
+                                    <button class="btn">
+                                        Try it!
+                                    </button>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <pre class="simulate-tag">&lt;/Bootstrap-4-grid-generator&gt;</pre>
+                </div>
+
+                <div class="information-item info-horizontal hidden">
+                    <pre class="simulate-tag">&lt;Fruity&gt;</pre>
+                    <div class="work-properties d-flex flex-row flex-wrap">
+                        <div class="preview-img">
+                            <img class="mr-default" width="300px" src="./assets/fruity.gif">
+                        </div>
+                        <div class="information-content">
+                            <p>
+                                The Mobile first HTML CSS Javascript Template <br>for website shopping fruit and juice
+                            </p>
+                        </div>
+                    </div>
+
+                    <pre class="simulate-tag">&lt;/Fruity&gt;</pre>
+                </div>
+
+            </div>
+        </section>
+        <!-- <section class="section info-section">info</section> -->
+        <section class="section contact-section flex-center--middle">
+            <div class="contact-container" style="
+        z-index: 1;
+    ">
+                <!-- <div class="mb-1">Nguyen Thanh Trung</div> -->
+                <div class="mb-1 flex-center--middle">
+                    <img id="avatar" src="./assets/avatar.jpg">
+                </div>
+                <div>
+                    <div class="mb-1">
+                        <i class="fab fa-facebook-f info-icon"></i>
+                        <span><a href="https://facebook.com/alway.lie" target="_blank"> Nguyen Thanh Trung</a></span>
+                    </div>
+                    <div class="mb-1">
+                        <i class="far fa-envelope info-icon"></i>
+                        <span><a href="mailto:trungntdev@gmail.com">trungntdev@gmail.com</a></span>
+                    </div>
+                    <div class="mb-1">
+                        <i class="fas fa-phone-volume info-icon"></i>
+                        <span>
+                            <a href="tel:0387307851">+84 387 307 851</a>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div id="scrollTop" onclick="scrollToTop()" class="hide"><span>▲</span></div>
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+    <!-- <script>
+    anime({
+      targets: ".trung",
+      translateY: -250
+    });
+  </script> -->
+    <script src="./scripts/src/main.js"></script>
+    <script src="./scripts/src/game.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.6.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+</body>
+
+</html>
