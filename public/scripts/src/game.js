@@ -11,6 +11,7 @@ Audio.prototype.stop = function () {
 Audio.prototype.rePlay = function () {
     this.pause();
     this.currentTime = 0;
+    this.volume = 0.09;
     this.play();
 }
 var audio = {
@@ -425,6 +426,7 @@ function Player(x, y, vx, vy, width, height) {
             if (this.getXRight() >= screenW) {
                 pauseGame();
                 hideGame();
+                audio.worldClear.volume = 0.09;
                 audio.worldClear.play();
                 document.getElementById('mainInfomation').classList.remove('hidden');
                 anime({
@@ -734,6 +736,7 @@ function initGame() {
     initDefaultBricks();
     setTimeout(() => {
         // TODO: to play sound
+        audio.theme.volume = 0.09;
         audio.theme.play();
         shouldBreak = false;
         // rerenderScene();
@@ -790,6 +793,7 @@ function pauseGame() {
 
 function continueGame() {
     shouldBreak = false;
+    audio.theme.volume = 0.09;
     audio.theme.play();
 }
 
