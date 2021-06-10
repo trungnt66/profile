@@ -23,6 +23,17 @@ function scrollToTop() {
     scrollToSelector(".main-section");
 }
 
+function onclickExplore() {
+    anime({
+        targets: '.info-section',
+        top: ['100vh', 0],
+        borderTopRightRadius:['50vw', 0],
+        borderTopLeftRadius:['50vw', 0],
+            easing: 'easeOutExpo',
+    }) 
+    initGame();
+}
+
 function moveInfoItem(isNext) {
     const durationAnimation = 700;
     const listItem = document.getElementsByClassName('information-item');

@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <script src="./scripts/libs/anime.min.js"></script>
@@ -10,6 +11,9 @@
 I’m working as front-end developer in FPT Software in Hanoi and I have over three years hand-on
 experience efficiently coding websites and applications using modern HTML, CSS, and JavaScript.">
 
+    <meta property="og:image" content="./assets/me.png" />
+    <!-- test auto deploy -->
+
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -20,16 +24,30 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
 
 <body>
     <div class="perspective-wrapper">
-        <div id="nav" class="">
+        <!-- <div id="nav" class="">
             <div id="hello" onclick="onClickWork()"></div>
             <div id="im" onclick="onClickInfo()"></div>
             <div id="trung" class="trung" onclick="onClickContact()" style="margin-top: 0px;"></div>
-        </div>
+        </div> -->
         <section class="section main-section">
+            <div id="commonInfomation" style="letter-spacing: 3px;">
+                <h1>
+                    Hello! I'm Trung_
+                </h1>
+                <p>
+                    I’m working as front-end developer in FPT Software in Hanoi<br> and I have over three years hand-on
+                    experience efficiently coding <br> websites and applications using modern HTML, CSS, and JavaScript.
+                    <br>
+                    <br>
+
+                    <button id="start" onclick="onclickExplore()" class="btn">Explore</button>
+                </p>
+
+            </div>
         </section>
 
         <section class="section info-section flex-center--middle">
-            <div id="commonInfomation" style="letter-spacing: 3px;">
+            <!-- <div id="commonInfomation" style="letter-spacing: 3px;">
                 <h1>
                     Hey, I'm Nguyen Thanh Trung
                 </h1>
@@ -39,7 +57,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                 </p>
 
                 <button id="start" onclick="initGame()" class="btn">Explore</button>
-            </div>
+            </div> -->
             <div class="flex-center--middle hidden" id="gameContainer">
                 <canvas id="canvas" width="735.1666666666666px" height="500px"></canvas>
                 <!-- <button id="adv" onclick="initGame()" class="">Experience overview</button> -->
@@ -67,7 +85,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                 </div>
             </div>
             <div id="mainInfomation" class="mx-default hidden flex-center--middle">
-                <pre id="infoText">Check out my little works</pre>
+                <pre id="infoText">Check out my little works<span>_</span></pre>
             </div>
             <div id="workSection" class="mx-default hidden">
                 <span class="prev-btn action-btn" onclick="moveInfoItem(false)">

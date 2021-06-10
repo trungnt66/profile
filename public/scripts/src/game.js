@@ -433,7 +433,7 @@ function Player(x, y, vx, vy, width, height) {
                     targets: ['#infoText'],
                     duration: 1000,
                     width: [0, '250px'],
-                    easing: 'linear'
+                    easing: 'steps(30)'
                 });
                 setTimeout(() => {
                     document.getElementById('mainInfomation').classList.add('hidden');
@@ -704,12 +704,6 @@ function initGame() {
     anime.timeline({
         duration: 500,
         easing: 'easeOutExpo',
-    }).add({
-        targets: commonInfo,
-        opacity: [1, 0],
-        complete: () => {
-            commonInfo.classList.add("hidden");
-        }
     }).add({
         targets: gameContainer,
         opacity: [0, 1],
