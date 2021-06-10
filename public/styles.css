@@ -647,4 +647,8 @@ pre#infoText>span {
         padding: 50px 0 0 0;
         text-align: center;
     }
+
+    .info-vertical .preview-img img {
+        height: 25vh;
+    }
 }
