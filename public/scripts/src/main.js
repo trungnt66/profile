@@ -8,15 +8,59 @@ function scrollToSelector(selector) {
 }
 
 function onClickWork() {
-    scrollToSelector(".main-section");
+    // scrollToSelector(".main-section");
+    // scrollToSelector(".contact-section");
+    // anime.timeline({
+    //     targets: '.contact-section',
+    // }).add({
+    //     top: [0, '100vh'],
+    // }).add({
+    //     opacity: [0, 0, 1]
+    // })
+
+    toggleContact(false);
 }
 
 function onClickInfo() {
     scrollToSelector(".info-section");
 }
 
+function toggleContact(isOpen) {
+    const animContainer = {
+        targets: '.contact-section',
+        top: isOpen ? ['100vh', 0] : [0, '100vh'],
+        easing: 'easeInOutQuad',
+        duration: '500ms'
+    }
+    const animContent = {
+        targets: ['.contact-section .contact-left', '.contact-section .contact-right'],
+        left: (el, i) => {
+            if (isOpen) {
+                return [(i * 100) + 'vw', (i * 30) + 'vw'];
+            } else {
+                return [(i * 30) + 'vw', (i * 100) + 'vw'];
+            }
+        },
+        width: (el, i) => {
+            const a = [30, 70]
+            return isOpen ? ['100vw', a[i]+'vw'] : [a[i]+'vw', '100vw'];
+        },
+        easing: 'easeInOutQuad',
+        duration: '500ms',
+    }
+    anime.timeline(
+        {
+        }
+    ).add(
+        isOpen ? animContainer : animContent
+    ).add(
+        isOpen ? animContent : animContainer
+    )
+}
+
 function onClickContact() {
-    scrollToSelector(".contact-section");
+    // scrollToSelector(".contact-section");
+    toggleContact(true)
 }
 
 function scrollToTop() {
@@ -27,10 +71,10 @@ function onclickExplore() {
     anime({
         targets: '.info-section',
         top: ['100vh', 0],
-        borderTopRightRadius:['50vw', 0],
-        borderTopLeftRadius:['50vw', 0],
-            easing: 'easeOutExpo',
-    }) 
+        // borderTopRightRadius: ['50vw', 0],
+        // borderTopLeftRadius: ['50vw', 0],
+        easing: 'easeOutExpo',
+    })
     initGame();
 }
 
@@ -116,7 +160,7 @@ function showScrollToTop(show) {
 
 // init();
 let perspectiveWrapper = document.querySelector('.perspective-wrapper');
-perspectiveWrapper.addEventListener('scroll', function(e) {
+perspectiveWrapper.addEventListener('scroll', function (e) {
     if (perspectiveWrapper.scrollTop > perspectiveWrapper.offsetHeight / 3 && scrollOverHello === false) {
         scrollOverHello = true;
         showNav(true);
@@ -145,10 +189,43 @@ function showWork() {
 
 }
 
+
+function animateLoading() {
+    var textWrapper = document.querySelector('#sectionLoading>span');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class=\"letter\">$&</span>");
+    anime.timeline({ loop: true })
+        .add({
+            targets: '#sectionLoading .letter',
+            opacity: [0, 1],
+            translateZ: 0,
+            easing: "easeOutExpo",
+            duration: 950,
+            delay: (el, i) => 70 * i
+        }).add({
+            targets: '.ml2',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+}
+
 function init() {
     anime({
         targets: ['#trung'],
         marginTop: [900, 0],
     });
+
+    animateLoading();
 }
 init();
+
+// loading effect when document is loading element
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        anime({
+            targets: '#sectionLoading',
+            translateX: [0, '100vw']
+        })
+    }, 500);
+})

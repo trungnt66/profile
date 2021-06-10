@@ -1,5 +1,10 @@
 :root {
     --default-space: 10px;
+    --zidx-1: 1;
+    --zidx-2: 100;
+    --zidx-3: 200;
+    --zidx-4: 300;
+    --zidx-largest: 10000;
 }
 
 html {
@@ -43,6 +48,17 @@ section.section.main-section::before {
     z-index: -1;
     content: "";
     /* filter: blur(3px); */
+}
+
+section.section#sectionLoading {
+    background: red;
+    z-index: var(--zidx-largest);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 120px;
+    font-family: cursive;
+    font-family: Consolas, monospace;
 }
 
 .hide {
@@ -145,6 +161,25 @@ section.section.main-section::before {
     background: #d72323;
     top: 100vh;
     /* padding-top: 50px; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: var(--zidx-2);
+}
+
+.navigation {
+    position: absolute;
+    top: 1.2em;
+    right: 4rem;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    cursor: pointer;
+    z-index: var(--zidx-largest);
+}
+
+.navigation>span {
+    
+    border-bottom: 1px solid;
 }
 
 div#commonInfomation {
@@ -171,6 +206,27 @@ div#commonInfomation p {
 .contact-section {
     /* background: #d72323; */
     top: 100vh;
+    background: black;
+    z-index: var(--zidx-4);
+}
+
+.contact-section>div {
+    /* opacity: 0; */
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--zidx-4);
+}
+
+.contact-section .contact-right {
+    background-color: #d72323;
+}
+
+.contact-section .contact-left {
+    background-color: black;
 }
 
 .contact-container {
@@ -301,6 +357,10 @@ img#avatar {
 
 #workSection {
     position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #workSection .action-btn {
@@ -314,6 +374,15 @@ img#avatar {
     z-index: 10;
     width: 4rem;
     text-align: center;
+    z-index: var(--zidx-3);
+}
+
+.info-horizontal .preview-img img {
+    height: 50vh;
+}
+
+.info-vertical .preview-img img {
+    height: 35vh;
 }
 
 #workSection .action-btn:hover {
@@ -507,6 +576,7 @@ button.control-btn:active {
     align-items: center;
     display: inline-flex !important;
     border-radius: 50%;
+    border: white solid;
 }
 
 #infoText {
@@ -567,5 +637,14 @@ pre#infoText>span {
     div#commonInfomation {
         height: unset;
         background: #000000ad;
+    }
+
+    .navigation {
+        font-size: 50px;
+        margin: 0 auto 0 auto;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 50px 0 0 0;
+        text-align: center;
     }
 }

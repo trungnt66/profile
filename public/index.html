@@ -24,11 +24,9 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
 
 <body>
     <div class="perspective-wrapper">
-        <!-- <div id="nav" class="">
-            <div id="hello" onclick="onClickWork()"></div>
-            <div id="im" onclick="onClickInfo()"></div>
-            <div id="trung" class="trung" onclick="onClickContact()" style="margin-top: 0px;"></div>
-        </div> -->
+        <section class="section" id="sectionLoading">
+            <span>Loading...</span>
+        </section>
         <section class="section main-section">
             <div id="commonInfomation" style="letter-spacing: 3px;">
                 <h1>
@@ -47,27 +45,19 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
         </section>
 
         <section class="section info-section flex-center--middle">
-            <!-- <div id="commonInfomation" style="letter-spacing: 3px;">
-                <h1>
-                    Hey, I'm Nguyen Thanh Trung
-                </h1>
-                <p>
-                    I’m working as front-end developer in FPT Software in Hanoi<br> and I have over three years hand-on
-                    experience efficiently coding websites and applications <br> using modern HTML, CSS, and JavaScript.
-                </p>
-
-                <button id="start" onclick="initGame()" class="btn">Explore</button>
-            </div> -->
+            <div class="navigation" onclick="onClickContact()">
+            <span>Contact me ❯ </span>    
+            </div>
             <div class="flex-center--middle hidden" id="gameContainer">
                 <canvas id="canvas" width="735.1666666666666px" height="500px"></canvas>
                 <!-- <button id="adv" onclick="initGame()" class="">Experience overview</button> -->
-                <button class="control-btn left-control" onmousedown="player.goLeft();" ontouchstart="player.goLeft();"
-                    onmouseup="player.pressingLeft = false;" ontouchend="player.pressingLeft = false;">❮</button>
-                <button class="control-btn right-control" onmousedown="player.goRight();"
-                    onmouseup="player.pressingRight = false;" ontouchstart="player.goRight();"
+                <button class="control-btn left-control"  ontouchstart="player.goLeft();"
+                     ontouchend="player.pressingLeft = false;">❮</button>
+                <button class="control-btn right-control" 
+                     ontouchstart="player.goRight();"
                     ontouchend="player.pressingRight = false;">❯</button>
-                <button class="control-btn jump-control" onmousedown="player.jump()"
-                    onmouseup="player.pressingJump = false;" ontouchstart="player.jump()"
+                <button class="control-btn jump-control" 
+                     ontouchstart="player.jump()"
                     ontouchend="player.pressingJump = false;">Jump</button>
 
                 <button class="control-btn left-control" ontouchstart="player.goLeft();"
@@ -98,8 +88,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                     <pre class="simulate-tag">&lt;Bootstrap-4-grid-generator&gt;</pre>
                     <div class="work-properties">
                         <div class="preview-img">
-                            <img class="mr-default" style="width: 100%;
-                            max-width: 700px;" src="./assets/bootstrap4grid.gif">
+                            <img class="mr-default" style="max-width: 700px;" src="./assets/bootstrap4grid.gif">
                         </div>
                         <div class="information-content">
                             <p>
@@ -124,7 +113,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                     <pre class="simulate-tag">&lt;Fruity&gt;</pre>
                     <div class="work-properties d-flex flex-row flex-wrap">
                         <div class="preview-img">
-                            <img class="mr-default" width="300px" src="./assets/fruity.gif">
+                            <img class="mr-default" src="./assets/fruity.gif">
                         </div>
                         <div class="information-content">
                             <p>
@@ -140,31 +129,40 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
         </section>
         <!-- <section class="section info-section">info</section> -->
         <section class="section contact-section flex-center--middle">
-            <div class="contact-container" style="
-        z-index: 1;
-    ">
-                <!-- <div class="mb-1">Nguyen Thanh Trung</div> -->
-                <div class="mb-1 flex-center--middle">
-                    <img id="avatar" src="./assets/avatar.jpg">
-                </div>
-                <div>
-                    <div class="mb-1">
-                        <i class="fab fa-facebook-f info-icon"></i>
-                        <span><a href="https://facebook.com/alway.lie" target="_blank"> Nguyen Thanh Trung</a></span>
-                    </div>
-                    <div class="mb-1">
-                        <i class="far fa-envelope info-icon"></i>
-                        <span><a href="mailto:trungntdev@gmail.com">trungntdev@gmail.com</a></span>
-                    </div>
-                    <div class="mb-1">
-                        <i class="fas fa-phone-volume info-icon"></i>
-                        <span>
-                            <a href="tel:0387307851">+84 387 307 851</a>
-                        </span>
+          
+            <div class="contact-left">
+                <div class="contact-container" >
+                    <div class="mb-1 flex-center--middle">
+                        <img id="avatar" src="./assets/avatar.jpg">
                     </div>
                 </div>
-
             </div>
+            <div class="contact-right">
+                <div class="navigation" onclick="onClickWork()">
+                    <span>❮ Works</span>    
+                    </div>
+                    <div class="contact-container" >
+                        <div>
+                            <div class="mb-1">
+                                <i class="fab fa-facebook-f info-icon"></i>
+                                <span><a href="https://facebook.com/alway.lie" target="_blank"> Nguyen Thanh
+                                        Trung</a></span>
+                            </div>
+                            <div class="mb-1">
+                                <i class="far fa-envelope info-icon"></i>
+                                <span><a href="mailto:trungntdev@gmail.com">trungntdev@gmail.com</a></span>
+                            </div>
+                            <div class="mb-1">
+                                <i class="fas fa-phone-volume info-icon"></i>
+                                <span>
+                                    <a href="tel:0387307851">0387 307 851</a>
+                                </span>
+                            </div>
+                        </div>
+    
+                    </div>
+            </div>
+
         </section>
     </div>
     <div id="scrollTop" onclick="scrollToTop()" class="hide"><span>▲</span></div>
@@ -205,12 +203,6 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
         }
         // ]]>
     </script>
-    <!-- <script>
-    anime({
-      targets: ".trung",
-      translateY: -250
-    });
-  </script> -->
     <script src="./scripts/src/main.js"></script>
     <script src="./scripts/src/game.js"></script>
 

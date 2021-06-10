@@ -57,9 +57,18 @@ const listBricks = new ListBrick();
 
 // init const
 // window with height
-const w = window.innerWidth;
-const h = window.innerHeight;
-const screenH = (h * 8) / 12;
+let w = window.innerWidth;
+let h = window.innerHeight;
+let screenH;
+if (w > h) {
+    if (h <= 768);
+    w = 1920;
+    h = 1080;
+    screenH = (h * 8) / 12;
+} else {
+    screenH = (h * 9) / 12;
+}
+// const screenH = (h * 8) / 12;
 const screenWDisplay = (w * 11) / 12;
 const screenW = 3400;
 const groundWidth = 40;
@@ -178,17 +187,17 @@ function openInstruction() {
     anime.timeline({
         targets: '.game-instruction',
     })
-    .add({
-        width: [0, '80%'],
-        height: [0, '50%'],
-        padding: 25,
-    })
-    .add({
-        width: ['80%', 0,],
-        height: ['50%', 0,],
-        padding: 0,
-        delay: 5000
-    })
+        .add({
+            width: [0, '80%'],
+            height: [0, '50%'],
+            padding: 25,
+        })
+        .add({
+            width: ['80%', 0,],
+            height: ['50%', 0,],
+            padding: 0,
+            delay: 5000
+        })
 }
 
 function crateTextAnim(text) {
@@ -713,7 +722,7 @@ function initGame() {
         borderRadius: ['50%', 0],
         delay: 300,
         offset: 100,
-        complete: ()=>{
+        complete: () => {
             openInstruction();
         },
     })
