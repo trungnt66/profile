@@ -5,6 +5,7 @@
     --zidx-3: 200;
     --zidx-4: 300;
     --zidx-largest: 10000;
+    --main-theme-color: #d72323;
 }
 
 html {
@@ -51,7 +52,7 @@ section.section.main-section::before {
 }
 
 section.section#sectionLoading {
-    background: red;
+    background: var(--main-theme-color);
     z-index: var(--zidx-largest);
     justify-content: center;
     align-items: center;
@@ -131,17 +132,17 @@ section.section#sectionLoading {
 
 #nav > div:hover {
     transform: translate3d(10px, 0, 0);
-    color: #d72323;
+    color: var(--main-theme-color);
     cursor: pointer;
     box-sizing: border-box;
-    text-shadow: 0px 0px 20px #d72323;
+    text-shadow: 0px 0px 20px var(--main-theme-color);
 }
 
 #nav > div:hover::after {
     content: "HOME";
     display: block;
     transform: translate3d(10px, 0, 0);
-    color: #d72323;
+    color: var(--main-theme-color);
     cursor: pointer;
 }
 
@@ -154,11 +155,11 @@ section.section#sectionLoading {
 }
 
 /* .work-section {
-    background-image: linear-gradient(black, #d72323);
+    background-image: linear-gradient(black, var(--main-theme-color));
 } */
 
 .info-section {
-    background: #d72323;
+    background: var(--main-theme-color);
     top: 100vh;
     /* padding-top: 50px; */
     overflow-y: auto;
@@ -204,7 +205,7 @@ div#commonInfomation p {
 }
 
 .contact-section {
-    /* background: #d72323; */
+    /* background: var(--main-theme-color); */
     top: 100vh;
     background: black;
     z-index: var(--zidx-4);
@@ -222,7 +223,7 @@ div#commonInfomation p {
 }
 
 .contact-section .contact-right {
-    background-color: #d72323;
+    background-color: var(--main-theme-color);
 }
 
 .contact-section .contact-left {
@@ -495,8 +496,8 @@ pre.simulate-tag {
 
 .btn:hover {
     /* border: 2px solid cyan; */
-    border-color: #d72323;
-    box-shadow: 0 0 50px 0px #d72323;
+    border-color: var(--main-theme-color);
+    box-shadow: 0 0 50px 0px var(--main-theme-color);
 }
 
 button.control-btn {
@@ -569,7 +570,7 @@ button.control-btn:active {
 }
 
 .info-icon {
-    background: #d72323;
+    background: var(--main-theme-color);
     width: 30px;
     height: 30px;
     justify-content: center;
