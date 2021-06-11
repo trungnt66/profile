@@ -607,7 +607,7 @@ pre#infoText>span {
 }
 
 /* responsive */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) and (orientation: portrait) {
     body p {
         font-size: 25px;
     }
