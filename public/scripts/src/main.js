@@ -8,16 +8,6 @@ function scrollToSelector(selector) {
 }
 
 function onClickWork() {
-    // scrollToSelector(".main-section");
-    // scrollToSelector(".contact-section");
-    // anime.timeline({
-    //     targets: '.contact-section',
-    // }).add({
-    //     top: [0, '100vh'],
-    // }).add({
-    //     opacity: [0, 0, 1]
-    // })
-
     toggleContact(false);
 }
 
@@ -196,7 +186,8 @@ function animateLoading() {
     anime.timeline({ loop: true })
         .add({
             targets: '#sectionLoading .letter',
-            opacity: [0, 1],
+            opacity: [0, 1], 
+            scale: [0, 1],
             translateZ: 0,
             easing: "easeOutExpo",
             duration: 950,

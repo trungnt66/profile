@@ -62,6 +62,10 @@ section.section#sectionLoading {
     font-family: Consolas, monospace;
 }
 
+section.section#sectionLoading .letter {
+    display: inline-block;
+  }
+
 .hide {
     opacity: 0 !important;
     bottom: 2em !important;
