@@ -15,10 +15,12 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
     <!-- test auto deploy -->
 
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous">
+        crossorigin="anonymous"> -->
+
+        <script src="https://kit.fontawesome.com/7d3f064e2b.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 </head>
 
@@ -46,7 +48,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
 
         <section class="section info-section flex-center--middle">
             <div class="navigation" onclick="onClickContact()">
-                <span>Contact me ❯ </span>
+                <span>Contact me</span> <i class="fas fa-caret-right"></i>
             </div>
             <div class="flex-center--middle hidden" id="gameContainer">
                 <canvas id="canvas" width="735.1666666666666px" height="500px"></canvas>
@@ -86,7 +88,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                     <pre class="simulate-tag">&lt;Bootstrap-4-grid-generator&gt;</pre>
                     <div class="work-properties">
                         <div class="preview-img">
-                            <img class="mr-default" style="max-width: 700px;" src="./assets/bootstrap4grid.gif">
+                            <img class="mr-default" loading="lazy" style="max-width: 700px;" src="./assets/bootstrap4grid.gif">
                         </div>
                         <div class="information-content">
                             <p>
@@ -110,7 +112,7 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
                     <pre class="simulate-tag">&lt;Fruity&gt;</pre>
                     <div class="work-properties d-flex flex-row flex-wrap">
                         <div class="preview-img">
-                            <img class="mr-default" src="./assets/fruity.gif">
+                            <img loading="lazy" class="mr-default" src="./assets/fruity.gif">
                         </div>
                         <div class="information-content">
                             <p>
@@ -129,13 +131,13 @@ experience efficiently coding websites and applications using modern HTML, CSS, 
             <div class="contact-left">
                 <div class="contact-container">
                     <div class="mb-1 flex-center--middle">
-                        <img id="avatar" src="./assets/avatar.jpg">
+                        <img loading="lazy" id="avatar" src="./assets/avatar.jpg">
                     </div>
                 </div>
             </div>
             <div class="contact-right">
                 <div class="navigation" onclick="onClickWork()">
-                    <span>❮ Works</span>
+                    <i class="fas fa-caret-left"></i> <span>Works</span>
                 </div>
                 <div class="contact-container">
                     <div>

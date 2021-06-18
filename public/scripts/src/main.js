@@ -33,7 +33,7 @@ function toggleContact(isOpen) {
         },
         width: (el, i) => {
             const a = [30, 70]
-            return isOpen ? ['100vw', a[i]+'vw'] : [a[i]+'vw', '100vw'];
+            return isOpen ? ['100vw', a[i] + 'vw'] : [a[i] + 'vw', '100vw'];
         },
         easing: 'easeInOutQuad',
         duration: '500ms',
@@ -181,12 +181,13 @@ function showWork() {
 
 
 function animateLoading() {
+    // document.getElementById('sectionLoading').setAttribute('style', 'opacity: 0');
     var textWrapper = document.querySelector('#sectionLoading>span');
     textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class=\"letter\">$&</span>");
     anime.timeline({ loop: true })
         .add({
             targets: '#sectionLoading .letter',
-            opacity: [0, 1], 
+            opacity: [0, 1],
             scale: [0, 1],
             translateZ: 0,
             easing: "easeOutExpo",
@@ -198,14 +199,14 @@ function animateLoading() {
             duration: 1000,
             easing: "easeOutExpo",
             delay: 1000
-        });
+        })
 }
 
 function init() {
-    anime({
-        targets: ['#trung'],
-        marginTop: [900, 0],
-    });
+    // anime({
+    //     targets: ['#trung'],
+    //     marginTop: [900, 0],
+    // });
 
     animateLoading();
 }

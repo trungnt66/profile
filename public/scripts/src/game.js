@@ -39,7 +39,7 @@ let shouldBreak = false;
 // init sprite image
 const spriteImage = new Image();
 const spriteBackground = new Image();
-spriteBackground.src = "assets/background2.png";
+spriteBackground.src = "assets/background.png";
 const haui = new Image();
 haui.src = "assets/school.png";
 const fpt = new Image();
@@ -578,7 +578,7 @@ function drawBuilding() {
     }
 }
 //#endregion
-function drawText(ctx, text, x = 0, y = 0, font = "22px Orbitron") {
+function drawText(ctx, text, x = 0, y = 0, font = "30px Consolas, monospace") {
     if (!ctx || !text) {
         return;
     }

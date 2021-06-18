@@ -18,7 +18,7 @@ body {
     font-size: 18px;
     padding: none;
     margin: unset;
-    font-family: "Orbitron", sans-serif;
+    font-family: Consolas, monospace;
     overflow: hidden;
     touch-action: manipulation;
 }
@@ -36,7 +36,7 @@ h1 {
 }
 
 section.section.main-section::before {
-    background-image: url("assets/background-body.png");
+    /* background-image: url("assets/background-body.png"); */
     position: absolute;
     background-position: right;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@ section.section#sectionLoading .letter {
     align-items: flex-start;
     flex-direction: column;
     font-weight: bold;
-    background-image: url(./assets/me.png);
+    background-image: url(./assets/me.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center right;
@@ -175,11 +175,14 @@ section.section#sectionLoading .letter {
     position: absolute;
     top: 1.2em;
     right: 4rem;
-    letter-spacing: 3px;
     box-sizing: border-box;
     padding-bottom: 4px;
     cursor: pointer;
     z-index: var(--zidx-largest);
+}
+
+.navigation i {
+    font-size: 1rem;
 }
 
 .navigation>span {
@@ -189,7 +192,6 @@ section.section#sectionLoading .letter {
 
 div#commonInfomation {
     font-family: Consolas, monospace;
-    letter-spacing: 3px;
     padding-right: 3rem;
     padding-left: 3rem;
     display: flex;
@@ -244,7 +246,6 @@ div#commonInfomation p {
 .contact-container a {
     color: white;
     text-decoration: none;
-    letter-spacing: 3px;
 }
 
 img#avatar {
@@ -563,6 +564,8 @@ button.control-btn:active {
 #canvas {
     height: calc((100vh * 8 / 12));
     width: calc((100vw * 11 / 12));
+    background-color: black;
+    border-radius: 2rem;
 }
 
 /* .info-line-container {
@@ -611,14 +614,16 @@ pre#infoText>span {
 }
 
 /* responsive */
-@media only screen and (max-width: 1000px) and (orientation: portrait) {
-    body p {
-        font-size: 25px;
-    }
+@media only screen and (max-width: 1000px) {
     button.control-btn {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+@media only screen and (max-width: 1000px) and (orientation: portrait) {
+    body p {
+        font-size: 25px;
     }
 
     #scrollTop {
@@ -651,6 +656,10 @@ pre#infoText>span {
         transform: translate(-50%, 0);
         padding: 50px 0 0 0;
         text-align: center;
+    }
+
+    .navigation i {
+        font-size: 40px;
     }
 
     .info-vertical .preview-img img {
