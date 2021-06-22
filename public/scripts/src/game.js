@@ -602,9 +602,26 @@ function animate() {
     // call again next time we can draw
     // currentview
 
+
+
+    // setTimeout(() => {
     if (!shouldBreak) {
-        setTimeout(() => {
-            requestAnimationFrame(animate);
+        // request another frame
+
+        requestAnimationFrame(animate);
+
+        // calc elapsed time since last loop
+
+        now = Date.now();
+        elapsed = now - then;
+        // requestAnimationFrame(animate);
+        if (elapsed > fpsInterval) {
+
+            // Get ready for next frame by setting then=now, but also adjust for your
+            // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+            then = now - (elapsed % fpsInterval);
+
+            // drawing code here
             // camera move
             if (player.x > (screenWDisplay) / 2 && player.x < 3000) {
                 // currentViewPort.x = player.x - screenWDisplay;
@@ -628,8 +645,12 @@ function animate() {
             // recalculate position and render player
             player.recalculate();
             renderplayer();
-        }, 1000 / 60);
+
+        }
+
+
     }
+    // }, 1000 / 60);
 }
 
 function rerenderScene() {
@@ -707,6 +728,16 @@ function initDefaultBricks() {
     listBricks.drawAllBrick();
 }
 
+// init fps value
+let fpsInterval = 1000 / 61;
+let then = Date.now();
+let startTime = then;
+
+function initFps() {
+    then = Date.now();
+    startTime = then;
+}
+
 function initGame() {
     let commonInfo = document.getElementById("commonInfomation");
     let gameContainer = document.getElementById("gameContainer");
@@ -744,6 +775,7 @@ function initGame() {
         shouldBreak = false;
         // rerenderScene();
         renderplayer();
+        initFps();
         animate();
         // ctx.transform(null, null, null, null, 100, 0);
     }, 100);
