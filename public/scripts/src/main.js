@@ -203,10 +203,6 @@ function animateLoading() {
 }
 
 function init() {
-    // anime({
-    //     targets: ['#trung'],
-    //     marginTop: [900, 0],
-    // });
 
     animateLoading();
 }
